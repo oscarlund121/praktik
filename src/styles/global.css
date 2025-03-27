@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Chillax";
+  src: url("fonts/Chillax-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rethink-bold";
+  src: url("fonts/rethink/RethinkSans-Bold.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rethink-medium";
+  src: url("fonts/rethink/RethinkSans-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+
+:root {
+  /* Font */
+  --font-family-h: "Rethink-bold", sans-serif;
+  --font-family-p: "Chillax", sans-serif;
+
+  --h1-font-size: 35px;
+  --h2-font-size: 2rem;
+  --h3-font-size: 25px;
+  --h4-font-size: 0.8rem;
+  --p-font-size: clamp(1rem, 0.3043rem + 3.4783vw, 3rem);
+  --p-line-height: 1.5;
+  --p-letter-spacing: 0.5px;
+
+  /* Colors */
+  --bg-color: white;
+  --f-color-w: white;
+  --font-color-b: black;
+  --font-color-g: #595566;
+  --service-card-color: rgba(38, 38, 38, 0.9);
+  --card-bg-color: #ffffff;
+
+  --content-width: 1200px;
+  --card-gap: 2rem;
+  --card-border-radius: 20px;
+
+  --padding-block: 50px;
+
+  --section-pd-block: 100px;
+}
+
+html {
+  font-family: var(--font-family-p);
+}
+
+body {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) [content-start] minmax(0, 600px) [x] minmax(
+      0,
+      600px
+    ) [content-end] minmax(20px, 1fr);
+
+  > * {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+
+    > * {
+      grid-column: content;
+    }
+  }
+}
+
+.full-bleed {
+  grid-column: 1 / -1;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  line-height: 1.5;
+}
+

@@ -1,0 +1,63 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<nav class="full-bleed">
+  <button id="burger" aria-label="Menu">☰</button>
+
+  <ul id="nav-links">
+    <li>
+      <a href="#">Om mig</a>
+      <a href="#">Projekter</a>
+      <a href="#">Kontakt</a>
+      <Button variant="secondary">CV</Button>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  @media (width < 800px) {
+    ul {
+      grid-column: 1 / 2;
+      
+      li {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    #burger {
+      display: flex;
+    }
+
+    #nav-links {
+      display: none;
+    }
+
+  }
+  #burger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  ul {
+    grid-column: 3;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      
+      
+      a {
+        color: black;
+        padding: 10px 20px;
+        border: solid 1px black;
+      }
+    }
+
+  }
+</style>

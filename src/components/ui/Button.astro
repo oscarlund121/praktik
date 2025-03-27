@@ -1,0 +1,30 @@
+---
+const { href = "#", variant = "primary" } = Astro.props;
+---
+
+<a href={href} data-variant={variant}>
+  <slot />
+</a>
+
+<style>
+  @layer components {
+    [data-variant="primary"] {
+      align-content: center;
+      text-decoration: none;
+      color: black;
+      padding: 5px 20px;
+      border: none;
+    }
+
+    [data-variant="secondary"] {
+      align-content: center;
+      background-color: #adb4ac;
+      border: none;
+      cursor: pointer;
+      color: black;
+      padding: 10px 30px;
+      font-weight: 300;
+      text-decoration: solid 0px black;
+    }
+  }
+</style>
